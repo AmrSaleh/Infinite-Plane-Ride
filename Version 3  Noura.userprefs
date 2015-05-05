@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlaneControl.cs">
+    <Files>
+      <File FileName="Assets\Scripts\PlaneControl.cs" Line="219" Column="57" />
+      <File FileName="Assets\Scripts\PoolScript.cs" Line="25" Column="5" />
+      <File FileName="Assets\Scripts\DeactivateByCollision.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

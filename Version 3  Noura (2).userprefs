@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\bulletCollisionScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\DeactivateByCollision.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlaneControl.cs" Line="47" Column="75" />
+      <File FileName="Assets\Scripts\replaceWalls.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\bulletCollisionScript.cs" Line="8" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

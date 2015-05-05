@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShootingScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\collisionWithTargets.cs" Line="8" Column="2" />
+      <File FileName="Assets\Scripts\MenuScript.cs" Line="29" Column="1" />
+      <File FileName="Assets\Scripts\TouchInput.cs" Line="17" Column="3" />
+      <File FileName="Assets\Scripts\Up.cs" Line="19" Column="2" />
+      <File FileName="Assets\Scripts\MoveUpScript.cs" Line="16" Column="11" />
+      <File FileName="Assets\Scripts\ShootingScript.cs" Line="15" Column="10" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

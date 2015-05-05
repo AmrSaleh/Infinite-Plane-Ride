@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlaneControl.cs">
+    <Files>
+      <File FileName="Assets\Scripts\PlaneControl.cs" Line="211" Column="22" />
+      <File FileName="Assets\Scripts\HealthPowerUp.cs" Line="46" Column="3" />
+      <File FileName="Assets\Scripts\bulletsPowerUp.cs" Line="43" Column="3" />
+      <File FileName="Assets\Scripts\speedPowerUp.cs" Line="84" Column="22" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
