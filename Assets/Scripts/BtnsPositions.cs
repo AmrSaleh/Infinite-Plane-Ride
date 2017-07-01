@@ -11,7 +11,7 @@ public class BtnsPositions : MonoBehaviour {
 	void Start () 
 	{
 		Debug.Log ("btns positions start");
-		Vector3 cameraBounds = camera.ScreenToWorldPoint(new Vector3 (Screen.width, Screen.height, 0));
+		Vector3 cameraBounds = GetComponent<Camera>().ScreenToWorldPoint(new Vector3 (Screen.width, Screen.height, 0));
 
 //		Debug.Log ("width: "+cameraBounds.x);
 //		Debug.Log ("height: "+cameraBounds.y);

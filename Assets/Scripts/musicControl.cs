@@ -10,13 +10,13 @@ public  class musicControl  : MonoBehaviour
 
 		if (GlobalData.Music == true) 
 		{
-			if (!(audio.isPlaying))
-				audio.Play ();
+			if (!(GetComponent<AudioSource>().isPlaying))
+				GetComponent<AudioSource>().Play ();
 		} 
 		else 
 		{
 //			audio.volume = 0.0F;
-			audio.Pause();
+			GetComponent<AudioSource>().Pause();
 		}
 	
 	}		

@@ -9,7 +9,7 @@ public class Up : MonoBehaviour {
 		transform.position = Vector3.zero;
 		transform.localScale = Vector3.zero;
 		
-		guiTexture.pixelInset = new Rect(0, 0, Screen.width/2, Screen.height);
+		GetComponent<GUITexture>().pixelInset = new Rect(0, 0, Screen.width/2, Screen.height);
 	}
 
 	void OnMouseDown(){

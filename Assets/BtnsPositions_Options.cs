@@ -19,24 +19,24 @@ public class BtnsPositions_Options : MonoBehaviour {
 
 		if (GlobalData.SFX) 
 		{
-			SFXOn.renderer.material.mainTexture = OnTexture;
-			SFXOff.renderer.material.mainTexture = OffTextureDim;
+			SFXOn.GetComponent<Renderer>().material.mainTexture = OnTexture;
+			SFXOff.GetComponent<Renderer>().material.mainTexture = OffTextureDim;
 		}
 		else 
 		{
-			SFXOn.renderer.material.mainTexture = OnTextureDim;
-			SFXOff.renderer.material.mainTexture = OffTexture;	
+			SFXOn.GetComponent<Renderer>().material.mainTexture = OnTextureDim;
+			SFXOff.GetComponent<Renderer>().material.mainTexture = OffTexture;	
 		}
 
 		if (GlobalData.Music) 
 		{
-			MusicOn.renderer.material.mainTexture = OnTexture;
-			MusicOff.renderer.material.mainTexture = OffTextureDim;
+			MusicOn.GetComponent<Renderer>().material.mainTexture = OnTexture;
+			MusicOff.GetComponent<Renderer>().material.mainTexture = OffTextureDim;
 		}
 		else 
 		{
-			MusicOn.renderer.material.mainTexture = OnTextureDim;
-			MusicOff.renderer.material.mainTexture = OffTexture;	
+			MusicOn.GetComponent<Renderer>().material.mainTexture = OnTextureDim;
+			MusicOff.GetComponent<Renderer>().material.mainTexture = OffTexture;	
 		}
 
 

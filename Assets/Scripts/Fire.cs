@@ -9,7 +9,7 @@ public class Fire : MonoBehaviour {
 		transform.position = Vector3.zero;
 		transform.localScale = Vector3.zero;
 		
-		guiTexture.pixelInset = new Rect(Screen.width/2, 0, Screen.width/2, Screen.height);
+		GetComponent<GUITexture>().pixelInset = new Rect(Screen.width/2, 0, Screen.width/2, Screen.height);
 	}
 	void OnMouseDown(){
 //		Debug.Log ("shooot");

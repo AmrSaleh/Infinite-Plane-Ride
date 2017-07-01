@@ -93,7 +93,7 @@ public class planeBehaviour : MonoBehaviour
 
 								splitScript script = (splitScript)actualPlaneBody.GetComponent (typeof(splitScript));
 								script.start ();
-								this.collider2D.enabled = false;
+								this.GetComponent<Collider2D>().enabled = false;
 
 								Destroy (rotor);
 
@@ -170,7 +170,7 @@ public class planeBehaviour : MonoBehaviour
 
 			
 
-				gameObject.rigidbody2D.AddForce (new Vector2 (moveHorizontal * speed, moveVertical * speed));
+				gameObject.GetComponent<Rigidbody2D>().AddForce (new Vector2 (moveHorizontal * speed, moveVertical * speed));
 //		gameObject.rigidbody2D.AddForce (new Vector2 (0, moveVertical * speed));
 
 		}
@@ -186,7 +186,7 @@ public class planeBehaviour : MonoBehaviour
 		
 						Debug.Log ("fire");
 						currentBullet.transform.position = new Vector2 (canon1.transform.position.x, canon1.transform.position.y);
-						currentBullet.rigidbody2D.AddForce (new Vector2 (1000, 0));
+						currentBullet.GetComponent<Rigidbody2D>().AddForce (new Vector2 (1000, 0));
 				}
 //				if (Input.GetKeyDown ("space")) {
 //
@@ -256,7 +256,7 @@ public class planeBehaviour : MonoBehaviour
 			
 						Debug.Log ("coin");
 						currentCoin.transform.position = new Vector2 (9, RandomNumber);
-						currentCoin.rigidbody2D.AddForce (new Vector2 (-350, 0));
+						currentCoin.GetComponent<Rigidbody2D>().AddForce (new Vector2 (-350, 0));
 			
 						yield return new WaitForSeconds (RandomSleep);
 				}				
@@ -275,7 +275,7 @@ public class planeBehaviour : MonoBehaviour
 						currentEnemy = (GameObject)activateEnemy.ActivateObject ();
 						
 						currentEnemy.transform.position = new Vector2 (9, RandomNumber);
-						currentEnemy.rigidbody2D.AddForce (new Vector2 (-InitialSpeed, 0));
+						currentEnemy.GetComponent<Rigidbody2D>().AddForce (new Vector2 (-InitialSpeed, 0));
 			
 
 						yield return new WaitForSeconds (1.0f);

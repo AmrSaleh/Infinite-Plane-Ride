@@ -13,7 +13,7 @@ public class ScrollingScript : MonoBehaviour
 	
 		void Start ()
 		{
-				savedOffset = renderer.sharedMaterial.GetTextureOffset ("_MainTex");
+				savedOffset = GetComponent<Renderer>().sharedMaterial.GetTextureOffset ("_MainTex");
 		}
 	
 		void Update ()
@@ -21,12 +21,12 @@ public class ScrollingScript : MonoBehaviour
 				old += Time.deltaTime * Speed;
 				float x = Mathf.Repeat (old, 1);
 				Vector2 Offset = new Vector2 (x, 0f);
-				renderer.sharedMaterial.SetTextureOffset ("_MainTex", Offset);
+				GetComponent<Renderer>().sharedMaterial.SetTextureOffset ("_MainTex", Offset);
 		}
 	
 		void OnDisable ()
 		{
-				renderer.sharedMaterial.SetTextureOffset ("_MainTex", savedOffset);
+				GetComponent<Renderer>().sharedMaterial.SetTextureOffset ("_MainTex", savedOffset);
 		}
 
 		public void changeBackground (int bgNum)
@@ -34,13 +34,13 @@ public class ScrollingScript : MonoBehaviour
 				bgNum = bgNum % 4;
 
 				if (bgNum == 0) {
-						renderer.material.mainTexture = texture0;
+						GetComponent<Renderer>().material.mainTexture = texture0;
 				} else if (bgNum == 1) {
-						renderer.material.mainTexture = texture1;
+						GetComponent<Renderer>().material.mainTexture = texture1;
 				} else if (bgNum == 2) {
-						renderer.material.mainTexture = texture2;
+						GetComponent<Renderer>().material.mainTexture = texture2;
 				} else if (bgNum == 3) {
-						renderer.material.mainTexture = texture3;
+						GetComponent<Renderer>().material.mainTexture = texture3;
 				}
 
 		}

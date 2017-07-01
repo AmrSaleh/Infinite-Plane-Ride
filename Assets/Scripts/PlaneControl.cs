@@ -106,7 +106,7 @@ public class PlaneControl : MonoBehaviour
 		StartCoroutine (PowerUpControl ());
 		StartCoroutine (CloudControl ());
 		
-		cameraBounds = MainCameraObject.camera.ScreenToWorldPoint (new Vector3 (Screen.width, Screen.height, 0));
+		cameraBounds = MainCameraObject.GetComponent<Camera>().ScreenToWorldPoint (new Vector3 (Screen.width, Screen.height, 0));
 		
 
 		
@@ -148,12 +148,12 @@ public class PlaneControl : MonoBehaviour
 	
 	public void move_plane (int moveVertical)
 	{
-		rigidbody2D.AddForce (PlayerSpeed * Vector2.up);
+		GetComponent<Rigidbody2D>().AddForce (PlayerSpeed * Vector2.up);
 		float minYSpeed = 0;
 		float maxYSpeed = 3;
-		float y = Mathf.Clamp (rigidbody2D.velocity.y, minYSpeed, maxYSpeed);
-		tempVector2.Set (rigidbody2D.velocity.x, y);
-		rigidbody2D.velocity = tempVector2;
+		float y = Mathf.Clamp (GetComponent<Rigidbody2D>().velocity.y, minYSpeed, maxYSpeed);
+		tempVector2.Set (GetComponent<Rigidbody2D>().velocity.x, y);
+		GetComponent<Rigidbody2D>().velocity = tempVector2;
 	}
 	
 	public GUITexture jumpTexture;
@@ -186,7 +186,7 @@ public class PlaneControl : MonoBehaviour
 			tempVec2.Set (transform.position.x + 1, transform.position.y);
 			currentBullet.transform.position = tempVec2;
 			tempVec2.Set (1000, 0);
-			currentBullet.rigidbody2D.AddForce (tempVec2);
+			currentBullet.GetComponent<Rigidbody2D>().AddForce (tempVec2);
 		} else if (bulletLevel == 1) {
 			currentBullet = (GameObject)activateBullet.ActivateObject ();
 			if (currentBullet == null)
@@ -196,7 +196,7 @@ public class PlaneControl : MonoBehaviour
 			tempVec2.Set (transform.position.x + 1, transform.position.y);
 			currentBullet.transform.position = tempVec2;
 			tempVec2.Set (1000, 0);
-			currentBullet.rigidbody2D.AddForce (tempVec2);
+			currentBullet.GetComponent<Rigidbody2D>().AddForce (tempVec2);
 			
 			currentBullet = null;
 			currentBullet = (GameObject)activateBullet.ActivateObject ();
@@ -207,7 +207,7 @@ public class PlaneControl : MonoBehaviour
 			tempVec2.Set (transform.position.x + 1, transform.position.y);
 			currentBullet.transform.position = tempVec2;
 			tempVec2.Set (500, 500);
-			currentBullet.rigidbody2D.AddForce (tempVec2);
+			currentBullet.GetComponent<Rigidbody2D>().AddForce (tempVec2);
 			
 			currentBullet = null;
 			currentBullet = (GameObject)activateBullet.ActivateObject ();
@@ -218,7 +218,7 @@ public class PlaneControl : MonoBehaviour
 			tempVec2.Set (transform.position.x + 1, transform.position.y);
 			currentBullet.transform.position = tempVec2;
 			tempVec2.Set (500, -500);
-			currentBullet.rigidbody2D.AddForce (tempVec2);
+			currentBullet.GetComponent<Rigidbody2D>().AddForce (tempVec2);
 		}
 	}
 	
@@ -322,7 +322,7 @@ public class PlaneControl : MonoBehaviour
 				//				Debug.Log("ana 3amlt soot");
 			}	
 			if (transform.position.y < 0) {
-				rigidbody2D.AddForce (Vector2.up * 500);
+				GetComponent<Rigidbody2D>().AddForce (Vector2.up * 500);
 			}
 			
 			if (!invincible) {
@@ -377,7 +377,7 @@ public class PlaneControl : MonoBehaviour
 				AudioSource.PlayClipAtPoint (LargeExplosionSound, transform.position);
 			//						LoseText.text = "Game Over";
 			Instantiate (LargeExplosion, transform.position, transform.rotation);
-			this.collider2D.enabled = false;
+			this.GetComponent<Collider2D>().enabled = false;
 			SaveInformation.SaveAllInformation ();
 			Debug.Log("el score elly betdwar 3aleeh ba3d el save = " + GlobalData.BeginnerScore);
 			gameEnded = true;
@@ -435,7 +435,7 @@ public class PlaneControl : MonoBehaviour
 							tempVec2.Set (12, RandomNumber);
 							currentCoin.transform.position = tempVec2;
 							tempVec2.Set (-coinSpeed, 0);
-							currentCoin.rigidbody2D.AddForce (tempVec2);
+							currentCoin.GetComponent<Rigidbody2D>().AddForce (tempVec2);
 							
 						}
 						
@@ -454,7 +454,7 @@ public class PlaneControl : MonoBehaviour
 							tempVec2.Set (12, RandomNumber);
 							currentCoin.transform.position = tempVec2;
 							tempVec2.Set (-coinSpeed, 0);
-							currentCoin.rigidbody2D.AddForce (tempVec2);
+							currentCoin.GetComponent<Rigidbody2D>().AddForce (tempVec2);
 							
 						}
 					}
@@ -472,7 +472,7 @@ public class PlaneControl : MonoBehaviour
 							tempVec2.Set (12, RandomNumber);
 							currentCoin.transform.position = tempVec2;
 							tempVec2.Set (-coinSpeed, 0);
-							currentCoin.rigidbody2D.AddForce (tempVec2);
+							currentCoin.GetComponent<Rigidbody2D>().AddForce (tempVec2);
 							
 						}
 					}
@@ -537,7 +537,7 @@ public class PlaneControl : MonoBehaviour
 					tempVec2.Set (12, RandomNumber);
 					currentBird.transform.position = tempVec2;
 					tempVec2.Set (-InitialEnemySpeed, 0);
-					currentBird.rigidbody2D.AddForce (tempVec2);
+					currentBird.GetComponent<Rigidbody2D>().AddForce (tempVec2);
 				}
 			}
 			yield return new WaitForSeconds (1.0f);
@@ -555,7 +555,7 @@ public class PlaneControl : MonoBehaviour
 			grassQuad.GetComponent<ScrollingScript> ().Speed = 0f;
 			currentDragon = (GameObject)activateDragon.ActivateObject ();
 			if (currentDragon != null) {
-				tempVec2.Set (cameraBounds.x - currentDragon.renderer.bounds.size.x / 2, -2.820957f);
+				tempVec2.Set (cameraBounds.x - currentDragon.GetComponent<Renderer>().bounds.size.x / 2, -2.820957f);
 				currentDragon.transform.position = tempVec2;
 			}
 			
@@ -594,7 +594,7 @@ public class PlaneControl : MonoBehaviour
 					tempVec2.Set (12, RandomNumber);
 					currentPowerUp.transform.position = tempVec2;
 					tempVec2.Set (-powerUpSpeed, 0);
-					currentPowerUp.rigidbody2D.AddForce (tempVec2);
+					currentPowerUp.GetComponent<Rigidbody2D>().AddForce (tempVec2);
 				}
 			}
 			yield return new WaitForSeconds (3.0f);
@@ -615,7 +615,7 @@ public class PlaneControl : MonoBehaviour
 					tempVec2.Set (10, 4.0f);
 					currentCloud.transform.position = tempVec2;
 					tempVec2.Set (-cloudSpeed, 0);
-					currentCloud.rigidbody2D.AddForce (tempVec2);
+					currentCloud.GetComponent<Rigidbody2D>().AddForce (tempVec2);
 				}
 			}
 			yield return new WaitForSeconds (3.0f);
@@ -630,42 +630,42 @@ public class PlaneControl : MonoBehaviour
 		//			activateBullet.objects[i].rigidbody2D.AddForce(new Vector2 (-bullet, 0));}
 		for (int i =0; i <activateCoin.objects.Length; i++) {
 			if (activateCoin.objects [i].activeInHierarchy)
-				activateCoin.objects [i].rigidbody2D.velocity = Vector2.zero;
+				activateCoin.objects [i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			tempVec2.Set (-coin, 0);
-			activateCoin.objects [i].rigidbody2D.AddForce (tempVec2);
+			activateCoin.objects [i].GetComponent<Rigidbody2D>().AddForce (tempVec2);
 		}
 		for (int i =0; i <activateBird.objects.Length; i++) {
 			if (activateBird.objects [i].activeInHierarchy)
-				activateBird.objects [i].rigidbody2D.velocity = Vector2.zero;
+				activateBird.objects [i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			tempVec2.Set (-bird, 0);
-			activateBird.objects [i].rigidbody2D.AddForce (tempVec2);
+			activateBird.objects [i].GetComponent<Rigidbody2D>().AddForce (tempVec2);
 		}
 		//		for(int i =0 ; i <activateDragon.objects.Length;i++){if(activateDragon.objects[i].activeInHierarchy)
 		//			activateDragon.objects[i].rigidbody2D.velocity=Vector2.zero;
 		//			activateDragon.objects[i].rigidbody2D.AddForce(new Vector2 (-dragon, 0));}
 		for (int i =0; i <activateCloud.objects.Length; i++) {
 			if (activateCloud.objects [i].activeInHierarchy)
-				activateCloud.objects [i].rigidbody2D.velocity = Vector2.zero;
+				activateCloud.objects [i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			tempVec2.Set (-cloud, 0);
-			activateCloud.objects [i].rigidbody2D.AddForce (tempVec2);
+			activateCloud.objects [i].GetComponent<Rigidbody2D>().AddForce (tempVec2);
 		}
 		for (int i =0; i <activatePowerUp1.objects.Length; i++) {
 			if (activatePowerUp1.objects [i].activeInHierarchy)
-				activatePowerUp1.objects [i].rigidbody2D.velocity = Vector2.zero;
+				activatePowerUp1.objects [i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			tempVec2.Set (-power, 0);
-			activatePowerUp1.objects [i].rigidbody2D.AddForce (tempVec2);
+			activatePowerUp1.objects [i].GetComponent<Rigidbody2D>().AddForce (tempVec2);
 		}
 		for (int i =0; i <activatePowerUp2.objects.Length; i++) {
 			if (activatePowerUp2.objects [i].activeInHierarchy)
-				activatePowerUp2.objects [i].rigidbody2D.velocity = Vector2.zero;
+				activatePowerUp2.objects [i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			tempVec2.Set (-power, 0);
-			activatePowerUp2.objects [i].rigidbody2D.AddForce (tempVec2);
+			activatePowerUp2.objects [i].GetComponent<Rigidbody2D>().AddForce (tempVec2);
 		}
 		for (int i =0; i <activatePowerUp3.objects.Length; i++) {
 			if (activatePowerUp3.objects [i].activeInHierarchy)
-				activatePowerUp3.objects [i].rigidbody2D.velocity = Vector2.zero;
+				activatePowerUp3.objects [i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			tempVec2.Set (-power, 0);
-			activatePowerUp3.objects [i].rigidbody2D.AddForce (tempVec2);
+			activatePowerUp3.objects [i].GetComponent<Rigidbody2D>().AddForce (tempVec2);
 		}
 		
 		Debug.Log ("there");

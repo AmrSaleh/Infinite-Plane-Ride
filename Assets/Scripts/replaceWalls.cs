@@ -15,14 +15,14 @@ public class replaceWalls : MonoBehaviour
 		void Start ()
 		{
 	
-				Vector3 cameraBounds = camera.ScreenToWorldPoint (new Vector3 (Screen.width, Screen.height + UpperWall.renderer.bounds.extents.y, 0));
-				tempVector3.Set (UpperWall.transform.position.x, cameraBounds.y + UpperWall.renderer.bounds.extents.y, UpperWall.transform.position.z);
+				Vector3 cameraBounds = GetComponent<Camera>().ScreenToWorldPoint (new Vector3 (Screen.width, Screen.height + UpperWall.GetComponent<Renderer>().bounds.extents.y, 0));
+				tempVector3.Set (UpperWall.transform.position.x, cameraBounds.y + UpperWall.GetComponent<Renderer>().bounds.extents.y, UpperWall.transform.position.z);
 				UpperWall.transform.position = tempVector3;
-				tempVector3.Set (LowerWall.transform.position.x, -(cameraBounds.y + LowerWall.renderer.bounds.extents.y), LowerWall.transform.position.z);
+				tempVector3.Set (LowerWall.transform.position.x, -(cameraBounds.y + LowerWall.GetComponent<Renderer>().bounds.extents.y), LowerWall.transform.position.z);
 				LowerWall.transform.position = tempVector3;
-				tempVector3.Set ((cameraBounds.x + RightWall.renderer.bounds.extents.x + 3), RightWall.transform.position.y, RightWall.transform.position.z);
+				tempVector3.Set ((cameraBounds.x + RightWall.GetComponent<Renderer>().bounds.extents.x + 3), RightWall.transform.position.y, RightWall.transform.position.z);
 				RightWall.transform.position = tempVector3;
-				tempVector3.Set (-(cameraBounds.x + LeftWall.renderer.bounds.extents.x + 3), LeftWall.transform.position.y, LeftWall.transform.position.z);
+				tempVector3.Set (-(cameraBounds.x + LeftWall.GetComponent<Renderer>().bounds.extents.x + 3), LeftWall.transform.position.y, LeftWall.transform.position.z);
 				LeftWall.transform.position = tempVector3;
 
 				tempVector3.Set (cameraBounds.x, 2 * cameraBounds.y, MoveUpBtn.transform.localScale.z);

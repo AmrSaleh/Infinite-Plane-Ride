@@ -15,13 +15,13 @@ public class MenuScript : MonoBehaviour {
 	{
 		Debug.Log ("menu SCript : start");
 		if (this.gameObject.tag == "PlayBtn")
-			renderer.material.mainTexture = PlayTexture;
+			GetComponent<Renderer>().material.mainTexture = PlayTexture;
 		else if (this.gameObject.tag == "OptionsBtn")
-			renderer.material.mainTexture = OptionsTexture;
+			GetComponent<Renderer>().material.mainTexture = OptionsTexture;
 		else if (this.gameObject.tag == "QuitBtn")
-			renderer.material.mainTexture = QuitTexture;
+			GetComponent<Renderer>().material.mainTexture = QuitTexture;
 		else if (this.gameObject.tag == "hallOfFame")
-			renderer.material.mainTexture = HallTexture;
+			GetComponent<Renderer>().material.mainTexture = HallTexture;
 	}
 	
 	void OnTouchDown ()

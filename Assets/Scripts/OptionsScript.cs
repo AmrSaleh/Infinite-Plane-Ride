@@ -21,21 +21,21 @@ public class OptionsScript : MonoBehaviour {
 
 //		Debug.Log (mc);
 				if (this.gameObject.tag == "SFXOn") {
-						renderer.material.mainTexture = OnTexture;
-						SFXOff.renderer.material.mainTexture = OffTextureDim;
+						GetComponent<Renderer>().material.mainTexture = OnTexture;
+						SFXOff.GetComponent<Renderer>().material.mainTexture = OffTextureDim;
 						GlobalData.SFX = true;
 				} else if (this.gameObject.tag == "SFXOff") {
-						renderer.material.mainTexture = OffTexture;
-						SFXOn.renderer.material.mainTexture = OnTextureDim;
+						GetComponent<Renderer>().material.mainTexture = OffTexture;
+						SFXOn.GetComponent<Renderer>().material.mainTexture = OnTextureDim;
 						GlobalData.SFX = false;
 				} else if (this.gameObject.tag == "MusicOn") {
-						renderer.material.mainTexture = OnTexture;
-						MusicOff.renderer.material.mainTexture = OffTextureDim;
+						GetComponent<Renderer>().material.mainTexture = OnTexture;
+						MusicOff.GetComponent<Renderer>().material.mainTexture = OffTextureDim;
 						GlobalData.Music = true;
 //			mc.GetComponent<musicControl>().Test();
 				} else if (this.gameObject.tag == "MusicOff") {
-						renderer.material.mainTexture = OffTexture;
-						MusicOn.renderer.material.mainTexture = OnTextureDim;
+						GetComponent<Renderer>().material.mainTexture = OffTexture;
+						MusicOn.GetComponent<Renderer>().material.mainTexture = OnTextureDim;
 						GlobalData.Music = false;		
 //			mc.GetComponent<musicControl>().Test();
 		}

@@ -18,7 +18,7 @@ public class shooting : MonoBehaviour {
 		if (Input.GetButtonDown ("Fire1")) {
 						GameObject mybullet = (GameObject)Instantiate (bullet, canon1.transform.position, bullet.transform.rotation);
 			tempVector2.Set(1000,0);
-			mybullet.rigidbody2D.AddForce(tempVector2);
+			mybullet.GetComponent<Rigidbody2D>().AddForce(tempVector2);
 //			mybullet =(GameObject) Instantiate (bullet, canon2.transform.position, canon2.transform.rotation);
 //			mybullet.rigidbody2D.AddForce(new Vector2(0,500));
 		}

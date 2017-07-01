@@ -37,7 +37,7 @@ public class shootFireBall : MonoBehaviour
 		if (GlobalData.SFX == true)
 			AudioSource.PlayClipAtPoint (fireballSound, transform.position);
 				hit = Instantiate (fireBall, transform.position, transform.rotation) as GameObject;
-				hit.rigidbody2D.AddForce (-transform.right.normalized * 500);
+				hit.GetComponent<Rigidbody2D>().AddForce (-transform.right.normalized * 500);
 				endTime = Time.time + duration;
 		}
 

@@ -7,7 +7,7 @@ public class QuitBtn : MonoBehaviour {
 
 	void Start ()
 	{
-		renderer.material.mainTexture = QuitTexture;
+		GetComponent<Renderer>().material.mainTexture = QuitTexture;
 	}
 	
 	void OnTouchDown ()

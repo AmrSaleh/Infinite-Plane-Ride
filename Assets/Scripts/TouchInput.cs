@@ -21,7 +21,7 @@ public class TouchInput : MonoBehaviour
 						touchList.Clear ();
 			
 			
-						Ray ray = camera.ScreenPointToRay (Input.mousePosition);
+						Ray ray = GetComponent<Camera>().ScreenPointToRay (Input.mousePosition);
 			
 						if (Physics.Raycast (ray, out hit, touchInputMask)) {
 				
@@ -59,7 +59,7 @@ public class TouchInput : MonoBehaviour
 			
 						foreach (Touch touch in Input.touches) {
 				
-								Ray ray = camera.ScreenPointToRay (touch.position);
+								Ray ray = GetComponent<Camera>().ScreenPointToRay (touch.position);
 				
 								if (Physics.Raycast (ray, out hit, touchInputMask)) {
 					
